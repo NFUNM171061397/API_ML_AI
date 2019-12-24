@@ -48,4 +48,7 @@
 
 
 ## 二、产品设计
-
+![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9101577203297_.pic.jpg)
+![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9111577203329_.pic.jpg)
+![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9121577203354_.pic.jpg)
+![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9131577203400_.pic.jpg)
