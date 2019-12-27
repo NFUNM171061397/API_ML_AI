@@ -53,3 +53,155 @@
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9111577203329_.pic.jpg)
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9121577203354_.pic.jpg)
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9131577203400_.pic.jpg)
+
+
+## 三、API调用
+### 地标识别API
+1.百度AI-地标识别API
+* [接口文档](https://ai.baidu.com/ai-doc/IMAGERECOGNITION/Kk3bcxbxj)
+* 接口描述：该请求用于识别地标，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的地标识别结果。
+* 接口地址： https://aip.baidubce.com/rest/2.0/image-classify/v1/landmark
+* 请求方式：POST
+* 请求实例：
+```python
+# encoding:utf-8
+
+import requests
+import base64
+
+'''
+地标识别
+'''
+
+request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v1/landmark"
+# 二进制方式打开图片文件
+f = open('[本地文件]', 'rb')
+img = base64.b64encode(f.read())
+
+params = {"image":img}
+access_token = '[调用鉴权接口获取的token]'
+request_url = request_url + "?access_token=" + access_token
+headers = {'content-type': 'application/x-www-form-urlencoded'}
+response = requests.post(request_url, data=params, headers=headers)
+if response:
+    print (response.json())
+```
+* 输出示例1
+```python
+{"log_id": 3450013152046070669, "result": {"landmark": "狮身人面像"}}
+```
+ * 输出示例2
+```python
+{'log_id': 1157600868256087579, 'result': {'landmark': '埃菲尔铁塔'}}
+```
+2.聚合数据-地标识别API
+* 接口地址：http://apis.juhe.cn/landmarkDetect/index
+* 返回格式：json
+* 请求方式：http post
+* 接口备注：该请求用于识别地标，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的地标识别结果
+* [请求实例](http://apis.juhe.cn/landmarkDetect/index)
+* JSON返回数据：
+```python
+{
+    "reason": "success",
+    "result": "东方明珠",
+    "error_code": 0
+}
+```
+
+3.阿里云-景点识别
+* 调用地址：http(s)://location.market.alicloudapi.com/landmark
+* 请求方式：POST
+* 返回类型：JSON
+* 请求实例：
+```python
+import urllib, urllib2, sys
+import ssl
+
+
+host = 'https://location.market.alicloudapi.com'
+path = '/landmark'
+method = 'POST'
+appcode = '你自己的AppCode'
+querys = ''
+bodys = {}
+url = host + path
+
+bodys['src'] = '''图片base64编码'''
+post_data = urllib.urlencode(bodys)
+request = urllib2.Request(url, post_data)
+request.add_header('Authorization', 'APPCODE ' + appcode)
+//根据API的要求，定义相对应的Content-Type
+request.add_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+response = urllib2.urlopen(request, context=ctx)
+content = response.read()
+if (content):
+    print(content)
+ ```
+ * 输出示例1——成功
+ ```python
+  "status": 200,
+  "msg": [
+    {
+      "description": "中央电视指挥部大楼",
+      "score": 0.34413087,
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 221,
+            "y": 64
+          },
+          {
+            "x": 720,
+            "y": 64
+          },
+          {
+            "x": 720,
+            "y": 608
+          },
+          {
+            "x": 221,
+            "y": 608
+          }
+        ]
+      },
+      "locations": [
+        {
+          "latLng": {
+            "latitude": 39.913505296604,
+            "longitude": 116.456537
+          }
+        }
+      ]
+    }
+  ]
+}
+ ```
+* 输出示例2——失败
+ ```python
+ {
+  "status": 500
+}
+ ```
+ 
+4.微软-计算机影像api
+* 识别名人和地标：名人和地标模型是特定于域的模型的示例。名人模型识别功能可识别 20 万商业、政治、体育和娱乐界名人。地标模型识别功能可识别全世界 9000 个自然和人工地标。特定于域的模型是计算机影像 API 内不断发展的功能。
+* 代码示例：
+```python
+computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
+remote_image_url = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg"
+
+# Call API with content type (landmarks) and URL
+detect_domain_results_landmarks = computervision_client.analyze_image_by_domain("landmarks", remote_image_url)
+print()
+
+print("Landmarks in the remote image:")
+if len(detect_domain_results_landmarks.result["landmarks"]) == 0:
+    print("No landmarks detected.")
+else:
+    for landmark in detect_domain_results_landmarks.result["landmarks"]:
+        print(landmark["name"])
+```
