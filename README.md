@@ -49,11 +49,21 @@
 
 
 ## 二、产品设计
+### 产品架构图
+
+### 1.载入页面-介绍产品的三大核心功能
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9101577203297_.pic.jpg)
+
+### 2.拍照打卡模块
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9111577203329_.pic.jpg)
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9121577203354_.pic.jpg)
+
+### 3.地标识别模块
 ![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9131577203400_.pic.jpg)
 
+### 4.附近去处模块（暂不做）
+
+### 5.个人页面
 
 ## 三、API调用
 ### 地标识别API
@@ -207,3 +217,5 @@ else:
 ```
 * 输出结果：
 ![输出](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/%E8%AF%86%E5%88%AB%E5%90%8D%E4%BA%BA%E5%92%8C%E5%9C%B0%E6%A0%87.png)
+
+### 四家API对比
