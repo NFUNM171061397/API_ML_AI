@@ -205,3 +205,5 @@ else:
     for landmark in detect_domain_results_landmarks.result["landmarks"]:
         print(landmark["name"])
 ```
+* 输出结果：
+![输出](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/%E8%AF%86%E5%88%AB%E5%90%8D%E4%BA%BA%E5%92%8C%E5%9C%B0%E6%A0%87.png)
