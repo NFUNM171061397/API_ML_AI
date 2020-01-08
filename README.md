@@ -16,7 +16,10 @@
 
 ## 价值主张设计（一分钟版本）
 ### 加值宣言
-旅行轨迹APP是一款针对于旅行爱好者的软件，拥有照片打卡与地标识别这两大核心功能。作为旅游爱好者想要通过打卡的方式来记录自己的旅行轨迹，那么可以通过用户上传的照片，进行照片信息的读取，再根据经纬度通过百度地图API获取位置，实现照片打卡功能。用户在影视/图片中看到心仪的景点，则可上传图片（影片截图），软件将通过调用百度——地标识别API，反馈给用户有关该图片中的地标名称。用户想要旅游又不知道去哪里好，可以根据用户浏览记录来为用户推荐景点，也可以根据用户所在位置推荐周边景点。识别地标名称与查询相应的信息，帮助用户解决不知道图片中出现的地标名称的问题，提供图片地标查询的功能。
+* 旅行轨迹APP是一款针对于旅行爱好者的软件，拥有照片打卡与地标识别这两大核心功能。
+* 作为旅游爱好者想要通过打卡的方式来记录自己的旅行轨迹，那么可以通过用户上传的照片，进行照片信息的读取，再根据经纬度通过百度地图API获取位置，实现照片打卡功能。
+* 用户在影视/图片中看到心仪的景点，则可上传图片（影片截图），软件将通过调用百度——地标识别API，反馈给用户有关该图片中的地标名称。识别地标名称与查询相应的信息，帮助用户解决不知道图片中出现的地标名称的问题，提供图片地标查询的功能。
+* 用户想要旅游又不知道去哪里好，可以根据用户浏览记录来为用户推荐景点，也可以根据用户所在位置推荐周边景点。
 
 
 ### 核心价值（最小可行性产品）
@@ -50,20 +53,21 @@
 
 ## 二、产品设计
 ### 产品架构图
-
+![产品架构](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/产品架构.png)
 ### 1.载入页面-介绍产品的三大核心功能
-![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9101577203297_.pic.jpg)
+![载入界面](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/载入界面.jpeg)
 
 ### 2.拍照打卡模块
-![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9111577203329_.pic.jpg)
-![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9121577203354_.pic.jpg)
+![拍照打卡](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/拍照打卡.jpeg)
+![拍照打卡2](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/拍照打卡2.jpeg)
 
 ### 3.地标识别模块
-![产品原型](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/9131577203400_.pic.jpg)
-
+![地标识别](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/地标识别.jpeg)
+![地标识别](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/地标识别2.jpeg)
 ### 4.附近去处模块（暂不做）
-
+![附近去处](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/附近去处.jpeg)
 ### 5.个人页面
+![个人模块](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/个人模块.jpeg)
 
 ## 三、API调用
 ### 地标识别API
@@ -216,6 +220,10 @@ else:
         print(landmark["name"])
 ```
 * 输出结果：
-![输出](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/%E8%AF%86%E5%88%AB%E5%90%8D%E4%BA%BA%E5%92%8C%E5%9C%B0%E6%A0%87.png)
+![输出](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/识别名人与地标.png)
 
 ### 四家API对比
+
+![聚合数据](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/聚合数据.png)
+
+![微软](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/微软.png)
