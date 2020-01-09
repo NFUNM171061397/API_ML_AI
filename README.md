@@ -70,7 +70,7 @@
 ![个人模块](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/个人模块.jpeg)
 
 ## 三、API调用
-### 地标识别API
+### 地标识别API调用
 1.百度AI-地标识别API
 * [接口文档](https://ai.baidu.com/ai-doc/IMAGERECOGNITION/Kk3bcxbxj)
 * 接口描述：该请求用于识别地标，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的地标识别结果。
@@ -108,100 +108,10 @@ if response:
 ```python
 {'log_id': 1157600868256087579, 'result': {'landmark': '埃菲尔铁塔'}}
 ```
-2.聚合数据-地标识别API
-* 接口地址：http://apis.juhe.cn/landmarkDetect/index
-* 返回格式：json
-* 请求方式：http post
-* 接口备注：该请求用于识别地标，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的地标识别结果
-* [请求实例](http://apis.juhe.cn/landmarkDetect/index)
-* JSON返回数据：
-```python
-{
-    "reason": "success",
-    "result": "东方明珠",
-    "error_code": 0
-}
-```
-
-3.阿里云-景点识别
-* 调用地址：http(s)://location.market.alicloudapi.com/landmark
-* 请求方式：POST
-* 返回类型：JSON
-* 请求实例：
-```python
-import urllib, urllib2, sys
-import ssl
-
-
-host = 'https://location.market.alicloudapi.com'
-path = '/landmark'
-method = 'POST'
-appcode = '你自己的AppCode'
-querys = ''
-bodys = {}
-url = host + path
-
-bodys['src'] = '''图片base64编码'''
-post_data = urllib.urlencode(bodys)
-request = urllib2.Request(url, post_data)
-request.add_header('Authorization', 'APPCODE ' + appcode)
-//根据API的要求，定义相对应的Content-Type
-request.add_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
-response = urllib2.urlopen(request, context=ctx)
-content = response.read()
-if (content):
-    print(content)
- ```
- * 输出示例1——成功
- ```python
-  "status": 200,
-  "msg": [
-    {
-      "description": "中央电视指挥部大楼",
-      "score": 0.34413087,
-      "boundingPoly": {
-        "vertices": [
-          {
-            "x": 221,
-            "y": 64
-          },
-          {
-            "x": 720,
-            "y": 64
-          },
-          {
-            "x": 720,
-            "y": 608
-          },
-          {
-            "x": 221,
-            "y": 608
-          }
-        ]
-      },
-      "locations": [
-        {
-          "latLng": {
-            "latitude": 39.913505296604,
-            "longitude": 116.456537
-          }
-        }
-      ]
-    }
-  ]
-}
- ```
-* 输出示例2——失败
- ```python
- {
-  "status": 500
-}
- ```
+* 输出结果
+![百度ai](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/百度识别结果.png)
  
-4.微软-计算机影像api
+2.微软-计算机影像api
 * 识别名人和地标：名人和地标模型是特定于域的模型的示例。名人模型识别功能可识别 20 万商业、政治、体育和娱乐界名人。地标模型识别功能可识别全世界 9000 个自然和人工地标。特定于域的模型是计算机影像 API 内不断发展的功能。
 * 代码示例：
 ```python
@@ -220,10 +130,21 @@ else:
         print(landmark["name"])
 ```
 * 输出结果：
-![输出](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/识别名人与地标.png)
+![微软](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/输出结果2.png)
 
-### 四家API对比
+### 两家API对比
+![百度](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/百度.png)
+* 百度AI适用于企业用户使用，调用量无限制，免费调用量一次性共3000次，超过部分的价格为1.8元/千次。它支持识别12万中外著名地标、景点，广泛应用于拍照识图、图片分类等场景。
 
-![聚合数据](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/聚合数据.png)
+![微软](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/微软价格.png)
+* 微软认知服务中，计算机视觉API目前支持两个特定领域的模型识别：名人和地标。免费调用量一次性共5000次，超过部分的价格有三个范围：0-1 百万个事务 — 每 1,000 个事务 ¥ 9.54；1-5 百万个事务 — 每 1,000 个事务 ¥ 6.36；5百万 + 个事务 — 每 1,000 个事务 ¥4.13。地标识别功能可识别全世界9000个自然和人工地标。
 
-![微软](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/微软.png)
+* 总结：就两家的调用价格来看，百度AI的价格优惠非常多。再从收录的地标来看，百度AI高达12万，远多于微软9000的收录。对于一款旅行app来说，能够成功识别图片中的地标，这对用户来说非常的重要。因此我选择百度AI中的地标识别。
+
+
+
+
+
+
+
+
