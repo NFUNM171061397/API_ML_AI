@@ -48,24 +48,24 @@
 | 用户想要发现自己周边的景点？ | 推荐系统通过用户定位智能推荐周边好去处    |智能推荐|基于推荐系统|次重要|
 
 ## 二、产品设计
-* 产品架构图
+### 产品架构图
 ![产品架构](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/产品架构.png)
 
-* 载入页面-介绍产品的三大核心功能
+### 载入页面-介绍产品的三大核心功能
 ![载入界面](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/载入界面.jpeg)
 
-* 拍照打卡模块
+### 拍照打卡模块
 ![拍照打卡](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/拍照打卡.jpeg)
 ![拍照打卡2](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/拍照打卡2.jpeg)
 
-* 地标识别模块
+### 地标识别模块
 ![地标识别](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/地标识别.jpeg)
 ![地标识别](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/地标识别2.jpeg)
 
-* 附近去处模块（暂不做）
+### 附近去处模块（暂不做）
 ![附近去处](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/附近去处.jpeg)
 
-* 个人页面
+### 个人页面
 ![个人模块](https://gitee.com/NFUNM171061397/API_ML_AI/raw/master/image/个人模块.jpeg)
 
 ### 1.交互及界面设计（详见上文图片/原型）
