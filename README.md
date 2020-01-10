@@ -74,7 +74,7 @@
 ### 2.信息设计（详见上文图片/原型）
 * 返回的地标建筑详细资料：地标识别API+百度百科资料
 * 返回的照片打卡地图：逆地理解析API、静态地图API
-### 3.[产品原型文档]( http://nfunm171061397.gitee.io/api_ml_ai)
+### 3.[产品原型文档交互展示]( http://nfunm171061397.gitee.io/api_ml_ai)
 ### 4.口头操作说明（详见上文图片/原型，20*20ppt）
 * 首先展现的是载入界面，将会介绍本产品的三大模块——拍照打卡、地标识别、附近去处。
 * 拍照打卡模块：用户点击图标，上传手机中的照片（可单选可多选），在操作页面进行信息读取，通过逆地理解析API获取照片经纬度，再通过调用静态地图API，根据经纬度获取地图位置，在结果页面实现照片在地图上的打卡功能。
@@ -242,6 +242,7 @@ https://apis.map.qq.com/ws/geocoder/v1/?location=39.984154,116.307490&key=OB4BZ-
  ```
 示例效果：在iphone4（ios系统）中显示一张280*140，缩放级别为10的北京市地图
 ![百度低清图](https://gitee.com/NFUNM171061397/API_ML_AI/blob/master/image/百度低清图.png)
+
 高清图url:
 ```python
 <img style="margin:20px" width="280" height="140" src="http://api.map.baidu.com/staticimage/v2?ak=E4805d16520de693a3fe707cdc962045&width=280&height=140&zoom=11&scale=2"/>
@@ -300,4 +301,14 @@ https://apis.map.qq.com/ws/staticmap/v2/
 * [地标识别API](http://nfunm171061397.gitee.io/build_python)
 * [利用地标识别+百科，搞定名胜古迹识别](https://www.csdn.net/article/a/2019-07-04/15977007)
 
+## 附件（若图片无法加载，可查看附件）
+### [产品原型文档交互展示]( http://nfunm171061397.gitee.io/api_ml_ai)
+
+### [产品原型文档下载]( https://gitee.com/NFUNM171061397/API_ML_AI)
+
+### [20*20 PPT下载]( https://github.com/NFUNM171061397/API_ML_AI/blob/master/20*20.pptx)
+
+### [拍照打卡-交互水平](http://nfunm171061397.gitee.io/photo_python)
+
+### [地标识别-交互水平](http://nfunm171061397.gitee.io/build_python)
 
